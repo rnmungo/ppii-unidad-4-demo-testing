@@ -1,0 +1,127 @@
+:root {
+  --fondo: #f6f7f9;
+  --superficie: #ffffff;
+  --texto: #1d2330;
+  --suave: #5b6577;
+  --borde: #d9dee7;
+  --acento: #2f6fdf;
+  --ok: #1d7a46;
+  --mal: #b42318;
+  --codigo-fondo: #10151f;
+  --codigo-texto: #e3e8f2;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+header {
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+  padding: 1.25rem 1rem 0;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header p { margin: 0.25rem 0 1rem; color: var(--suave); }
+
+nav { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+nav button {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  padding: 0.6rem 0.9rem;
+  color: var(--suave);
+}
+nav button[aria-pressed="true"] { color: var(--acento); border-bottom-color: var(--acento); font-weight: 600; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--acento);
+  background: var(--acento);
+  color: #fff;
+}
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+input, textarea {
+  font: inherit;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  margin: 0.25rem 0 0.75rem;
+}
+label { font-weight: 600; font-size: 0.9rem; }
+
+.barra { max-width: 360px; }
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tarjeta, .demo, .formulario {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.tarjeta { display: flex; flex-direction: column; gap: 0.35rem; }
+.tarjeta h3 { margin: 0; font-size: 1.05rem; overflow-wrap: anywhere; }
+.tarjeta p { margin: 0; }
+.tarjeta button { margin-top: auto; }
+.precio { font-size: 1.2rem; font-weight: 700; }
+
+.formulario { max-width: 420px; }
+
+.disponible { color: var(--ok); font-weight: 600; }
+.sin-stock, .error, .aviso { color: var(--mal); font-weight: 600; }
+
+.demo { margin-bottom: 1rem; }
+.demo h2 { margin-top: 0; font-size: 1.15rem; }
+.demo summary { cursor: pointer; font-weight: 600; }
+
+.comparacion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.comparacion h3 { font-size: 0.95rem; }
+.comentario {
+  min-height: 3rem;
+  padding: 0.6rem;
+  border: 1px dashed var(--borde);
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+.nota { color: var(--suave); font-size: 0.9rem; }
+
+.codigo {
+  background: var(--codigo-fondo);
+  color: var(--codigo-texto);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: #e7eefc;
+  color: var(--acento);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+}
+
+code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
